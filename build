@@ -345,7 +345,7 @@ TELEGRAM_TOOLCHAIN_VER=$(cat ${KERNEL_HYB}/out/include/generated/compile.h | gre
 
 # Telegram Bot Service || Compiling Notification
 function bot_template() {
-curl -s -X POST https://api.telegram.org/bot${TELEGRAM_BOT_ID}/sendMessage -d chat_id=${TELEGRAM_GROUP_ID} -d "parse_mode=HTML" -d text="$(
+curl -s -X POST https://api.telegram.org/bot1853505389:AAEEWWrIJZ7enNBUWv9_T0SC4zSCu0oHheo/sendMessage -d chat_id=-1001524264358 -d "parse_mode=HTML" -d text="$(
 	for POST in "${@}";
 		do
 			echo "${POST}"
@@ -471,13 +471,13 @@ elif [ "$KERNEL_NAME" == "1" ];
 		rm ${KERNEL_HYB}/localversion
 		if [ "$KERNEL_OVERCLOCK" == "1" ];
 			then
-				echo "-キズナ-OC-r10" > ${KERNEL_HYB}/localversion
+				echo "-╾━╤デ╦︻-OC" > ${KERNEL_HYB}/localversion
 				sed -i -e 's/# CONFIG_MACH_XIAOMI_C6_OVERCLOCKED is not set/CONFIG_MACH_XIAOMI_C6_OVERCLOCKED=y/g' ${KERNEL_HYB}/arch/arm64/configs/mido_defconfig
 				sed -i -e 's/CONFIG_MACH_XIAOMI_C6_DEFAULT=y/# CONFIG_MACH_XIAOMI_C6_DEFAULT is not set/g' ${KERNEL_HYB}/arch/arm64/configs/mido_defconfig
 				sed -i -e 's/# CONFIG_MACH_XIAOMI_C6_GPU_OVERCLOCKED is not set/CONFIG_MACH_XIAOMI_C6_GPU_OVERCLOCKED=y/g' ${KERNEL_HYB}/arch/arm64/configs/mido_defconfig
 		elif [ "$KERNEL_OVERCLOCK" == "0" ];
 			then
-				echo "-キズナ-r10" > ${KERNEL_HYB}/localversion
+				echo "-╾━╤デ╦︻" > ${KERNEL_HYB}/localversion
 				sed -i -e 's/CONFIG_MACH_XIAOMI_C6_OVERCLOCKED=y/# CONFIG_MACH_XIAOMI_C6_OVERCLOCKED is not set/g' ${KERNEL_HYB}/arch/arm64/configs/mido_defconfig
 				sed -i -e 's/# CONFIG_MACH_XIAOMI_C6_DEFAULT is not set/CONFIG_MACH_XIAOMI_C6_DEFAULT=y/g' ${KERNEL_HYB}/arch/arm64/configs/mido_defconfig
 				sed -i -e 's/CONFIG_MACH_XIAOMI_C6_GPU_OVERCLOCKED=y/# CONFIG_MACH_XIAOMI_C6_GPU_OVERCLOCKED is not set/g' ${KERNEL_HYB}/arch/arm64/configs/mido_defconfig
